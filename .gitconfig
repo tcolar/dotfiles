@@ -1,0 +1,13 @@
+[user]
+	email = tcolar@colar.net
+	name = Thibaut Colar
+[push]
+	default = simple
+[diff]
+	guitool = meld
+[difftool]
+	prompt = false
+[credential]
+	helper = cache --timeout=57600
+[gui]
+	editor = gedit
