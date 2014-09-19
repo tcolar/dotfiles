@@ -66,8 +66,14 @@ nmap <F7> :!go test<CR>
 nmap <F8> :NERDTreeToggle<CR>
 nmap <F9> :TagbarToggle<CR>
 nmap <F10> :call ToggleGUICruft()<cr>
-nmap <C-Tab> :bn<CR>
+nmap <C-Tab> :bn<CR>pumvisible() ? "\<C-n>" : "\<TAB>"
+
 nmap <C-S-Tab> :bp<CR>
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
-set clipboard=unnamed
 
+set clipboard=unnamed
+set go+=a
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
