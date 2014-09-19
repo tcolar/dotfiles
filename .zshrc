@@ -3,24 +3,13 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+CASE_SENSITIVE="true"
 
 plugins=(archlinux docker github git golang ssh-agent vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Custom env
 export DOCKER_HOST="tcp://127.0.0.1:2375"
