@@ -1,0 +1,11 @@
+# Marble mouse needs to be black listed from tlp:
+gksudo gedit /etc/default/tlp
+	USB_BLACKLIST="046d:c408"
+
+sudo service tlp restart
+
+# vim
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vimim
+vim
+	:PluginInstall
+

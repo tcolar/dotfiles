@@ -1,5 +1,0 @@
-[Unit]
-Description=Local scripts
-
-[Service]
-ExecStart=./local.sh
