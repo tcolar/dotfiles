@@ -12,7 +12,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # Custom env
-export DOCKER_HOST="tcp://127.0.0.1:2375"
 export EDITOR=vim
 export TERMINAL=lxterminal
 export JAVA_HOME=/usr/lib/jvm/java-8-jdk/

@@ -5,7 +5,7 @@ gksudo gedit /etc/default/tlp
 sudo service tlp restart
 
 # vim
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vimim
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim
 	:PluginInstall
 
