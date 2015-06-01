@@ -17,7 +17,7 @@ export TERMINAL=lxterminal
 export JAVA_HOME=/usr/lib/jvm/java-8-jdk/
 export FANTOM_HOME=$HOME/DEV/fantom_env/fantom
 export GOROOT=$HOME/apps/go
-export GOPATH=$HOME/DEV/go:$HOME/DEV/mesa/common/go:$HOME/DEV/mesa/mantle/go:$HOME/DEV/mesa/plume/go/:$HOME/DEV/mesa/seismic/go
+export GOPATH=$HOME/DEV/go:$HOME/DEV/mesa/go
 export PATH="/home/tcolar/perl5/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/tcolar/apps/go/bin:/home/tcolar/DEV/fantom_env/fantom/bin:/home/tcolar/apps/go/bin:/home/tcolar/DEV/fantom_env/fantom/bin:/home/tcolar/DEV/go/bin/:/home/tcolar/DEV/scripts/"
 
 # Aliases

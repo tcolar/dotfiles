@@ -11,3 +11,13 @@
 	helper = cache --timeout=57600
 [gui]
 	editor = gedit
+[http]
+	cookiefile = /home/tcolar/.gitcookies
+[alias]
+	change = codereview change
+	gofmt = codereview gofmt
+	mail = codereview mail
+	pending = codereview pending
+	submit = codereview submit
+	sync = codereview sync
+
