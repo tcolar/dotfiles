@@ -24,8 +24,8 @@ alias gfod="git fetch origin develop"
 alias gfom="git fetch origin master"
 alias grod="git rebase -i origin/develop"
 alias grom="git rebase -i origin/master"
-alias gpush="git push HEAD"
-alias gpushf="git push -f HEAD"
+alias gpush="git push origin HEAD"
+alias gpushf="git push -f origin HEAD"
 
 ## docker
 alias d=docker
