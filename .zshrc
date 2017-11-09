@@ -15,7 +15,7 @@ export NVM_DIR="$HOME/.nvm"
 export PGHOST=localhost
 export PGPORT=5432
 
-## git
+## gitcd /tm
 alias gp="git pull"
 alias gf="git fetch"
 alias gpod="git pull origin develop"
@@ -24,8 +24,8 @@ alias gfod="git fetch origin develop"
 alias gfom="git fetch origin master"
 alias grod="git rebase -i origin/develop"
 alias grom="git rebase -i origin/master"
-alias gpush="git push @HEAD"
-alias gpushf="git push -f @HEAD"
+alias gpush="git push HEAD"
+alias gpushf="git push -f HEAD"
 
 ## docker
 alias d=docker
