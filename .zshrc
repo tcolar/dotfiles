@@ -5,6 +5,9 @@ ZSH_THEME="robbyrussell"
 plugins=(git docker github golang ssh-agent)
 source $ZSH/oh-my-zsh.sh
 
+# SECRETS
+source ~/secrets.sh
+
 # PATH
 export PATH=~/go/bin:./node_modules/.bin/:~/code/ops/.tools/:$PATH
 export NVM_DIR="$HOME/.nvm"
@@ -14,6 +17,10 @@ export NVM_DIR="$HOME/.nvm"
 # Env
 export PGHOST=localhost
 export PGPORT=5432
+export PATH=$HOME/code/convoy/ops/.tools:$PATH
+export VAULT_CAPATH=$HOME/code/convoy/ops/credentials/greypoint-ca.cert.pem
+export VAULT_ADDR=https://mcp.greypoint.co:8200
+#vault auth -method=github token=$GIT_TOKEN
 
 ## gitcd /tm
 alias gp="git pull"
@@ -57,3 +64,14 @@ function s() {
 	grep -rni "$@" .
 }
 
+# call nvm use automatically whenever you enter a directory that contains an .nvmrc file
+autoload -U add-zsh-hook
+load-nvmrc() {
+ if [[ -f .nvmrc && -r .nvmrc ]]; then
+   nvm use >/dev/null
+ elif [[ $(nvm version) != $(nvm version default)  ]]; then
+   nvm use default >/dev/null
+ fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
