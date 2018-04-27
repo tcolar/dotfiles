@@ -17,9 +17,6 @@ export NVM_DIR="$HOME/.nvm"
 # Env
 export PGHOST=localhost
 export PGPORT=5432
-export PATH=$HOME/code/convoy/ops/.tools:$PATH
-export VAULT_CAPATH=$HOME/code/convoy/ops/credentials/greypoint-ca.cert.pem
-export VAULT_ADDR=https://mcp.greypoint.co:8200
 #vault auth -method=github token=$GIT_TOKEN
 
 ## gitcd /tm
