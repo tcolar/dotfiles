@@ -1,27 +1,24 @@
-
 # oh-my-zsh
-export ZSH=/Users/tcolar/.oh-my-zsh
-ZSH_THEME="robbyrussell"
-plugins=(git docker github golang ssh-agent)
+export ZSH="/Users/tcolar/.oh-my-zsh"
+ZSH_THEME="tcolar" #"robbyrussell"
+plugins=(zsh-autosuggestions git aws docker git-remote-branch go history nvm node npm postgres redis-cli sudo tig vscode yarn)
 source $ZSH/oh-my-zsh.sh
 
 # SECRETS
 source ~/secrets.sh
 
 # PATH
-export PATH=~/go/bin:./node_modules/.bin/:~/code/ops/.tools/:$PATH
+export PATH=~/go/bin:~/bin:./node_modules/.bin/:~/code/ops/.tools/:$PATH
 export NVM_DIR="$HOME/.nvm"
-. "$HOME/.nvm/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Env
 export PGHOST=localhost
 export PGPORT=5432
-#vault auth -method=github token=$GIT_TOKEN
 
-## gitcd /tm
-alias gp="git pull"
+## git
+alias gc="git checkout"
 alias gf="git fetch"
+alias gp="git pull"
 alias gpod="git pull origin develop"
 alias gpom="git pull origin master"
 alias gfod="git fetch origin develop"
@@ -71,6 +68,15 @@ load-nvmrc() {
  fi
 }
 add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+load-nvmrc 
 
 setopt NO_cdable_vars
+
+# env
+export AWS_REGION='us-west-2'
+export AWS_DEFAULT_REGION='us-west-2'
+
+alias cbox-local='$HOME/code/convoy/convoy-box/cbox/bin/cbox-local'
+
+# speed up new shells ??
+# rm -rf /var/log/asl/*.asl
