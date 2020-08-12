@@ -2,87 +2,6 @@
 ;; Symbol mapping to Dvorak while holding Space
 ;; Apply on top of Dvorak keyboard input
 ;;
-{:layers {:layer1 {:key :spacebar :alone {:key :spacebar}}}
- :main [               
-        {:des "Layer1 - Symbols"
-         :rules [:layer1
-         ;; Top row
-                 [:##q :grave_accent_and_tilde] ;; ' -> `grave_accent_and_tilde
-                 [:##e :up_arrow] ;; . -> up 
-                 [:##r :!S5] ;; p -> %
-                 [:##t :!S4] ;; y -> $
-                 [:##y :!Sbackslash] ;; f -> | 
-                 [:##u :!Shyphen] ;; g -> {
-                 [:##i :!S9] ;; c-> (
-                 [:##o :hyphen] ;; r -> [ 
-                 [:##p :backslash] ;; l -> \                
-         ;; Home row
-                 [:##caps_lock :!Cb] ;; Caps-> hypheneeee -> Cut    
-                 [:##s :left_arrow] ;; o -> left
-                 [:##d :down_arrow] ;; e -> down
-                 [:##f :right_arrow] ;; u -> right
-                 [:##g :!S1] ;; i -> !
-                 [:##h :!S2] ;; d -> @ 
-                 [:##j :close_bracket] ;; h -> =
-                 [:##k :!Sclose_bracket] ;; t -> +
-                 [:##l :open_bracket] ;; n -> /
-                 [:##semicolon :!S8];; s -> *
-                 [:##quote :!Sgrave_accent_and_tilde] ;; - -> ~      
-         ;; Bottom row
-                 [:##c :page_down] ;; j -> PG down 
-                 [:##b :!S3] ;; x -> # 
-                 [:##n :!S7] ;; b -> &
-                 [:##m :!Sequal_sign] ;; m -> }
-                 [:##comma :!S0] ;; w -> )
-                 [:##period :equal_sign] ;; v -> ]
-                 [:##slash :!S6] ;; z -> ^
-         ;; Numbers row
-                 [:##3 :page_up] ;; 3 -> PG up
-                 ]}
-        {:des "Caps lock"
-         :rules [
-                [:!Rcaps_lock :!Cperiod] ;; Shift + Caps -> Command-v -> Paste
-                [:##caps_lock :!Ci] ;; Caps -> Command-c -> Copy
-         ]
-        }  
-;;        {:des "dvorak"
-;;         ;; Top row
-;;         :rules [[:##q :quote] ;; broke 
-;;                 [:##w :comma]
-;;                 [:##e :period]
-;;                 [:##r :p]
-;;                 [:##t :y]
-;;                 [:##y :f]
-;;                 [:##u :g]
-;;                 [:##i :c]
-;;                 [:##o :r]
-;;                 [:##p :l]                 
-;;                 [:##open_bracket :slash]
-;;                 [:##close_bracket :equal_sign]
-        ;; Home row
-;;                 [:##s :o]
-;;                 [:##d :e]
-;;                 [:##f :u]
-;;                 [:##g :i]
-;;                 [:##h :d]
-;;                 [:##j :h]
-;;                 [:##k :t]
-;;                 [:##l :n]
-;;                 [:##semicolon :s]
-;;                 [:##quote :hyphen]
-        ;; Bottom row
-;;                 [:##z :semicolon]
-;;                 [:##x :q]
-;;                 [:##c :j]
-;;                 [:##v :k]
-;;                 [:##b :x]
-;;                 [:##n :b]
-;;                 [:##m :m]
-;;                 [:##comma :w]
-;;                 [:##period :v]
-;;                [:##slash :z]
-;;                 ]} 
-        ]}
     ;; !  | means 
     ;; #  | means optional
     ;; C  | left_command
@@ -96,3 +15,90 @@
     ;; R  | right_shift
     ;; !! | mandatory command + control + optional + shift (hyper)
     ;; ## | optional any
+;;
+{:layers {:layer1 {:key :spacebar :alone {:key :spacebar}}}
+ :main [               
+        {:des "Layer1 - Symbols"
+         :rules [:layer1
+         ;; Top row
+                 [:##q :grave_accent_and_tilde] ;; `
+                 [:##w :1] 
+                 [:##e :2]
+                 [:##r :3] 
+                 [:##t :!Sgrave_accent_and_tilde] ;; ~
+                 [:##y :!Sbackslash] ;; |
+                 [:##u :!S9] ;; ( 
+                 [:##i :!Sopen_bracket] ;; {
+                 [:##o :open_bracket] ;; [
+                 [:##p :!S4] ;; $     
+                 [:##open_bracket :!S6] ;; ^         
+         ;; Home row
+                 [:##caps_lock :!Cc] ;; Caps -> Ctrl+C-> Cut    
+                 [:##a :!S2] ;; @
+                 [:##s :4] 
+                 [:##d :5] 
+                 [:##f :6] 
+                 [:##g :!S1] ;; !
+                 [:##h :!S5] ;; % 
+                 [:##j :equal_sign] 
+                 [:##k :slash] ;; /
+                 [:##l :!S8] ;; *
+                 [:##semicolon :!Sequal_sign] ;; +
+         ;; Bottom row
+                 [:##z :backslash] 
+                 [:##x :7]
+                 [:##c :8] 
+                 [:##v :9] 
+                 [:##b :0] 
+                 [:##n :!S7] ;; & 
+                 [:##m :!S0] ;; )
+                 [:##comma :!Sclose_bracket] ;; }
+                 [:##period :close_bracket] ;; ]
+                 [:##slash :!S3] ;; #
+                 ]}
+        {:des "Caps lock"
+         :rules [
+                [:!Rcaps_lock :!Cp] ;; Shift + Caps -> Command+v -> Paste
+                [:##caps_lock :!Cv] ;; Caps -> Command+c -> Copy
+         ]
+        }  
+        {:des "dvorak"
+         ;; Top row
+         :rules [[:##q :quote] ;; broke 
+                 [:##w :comma]
+                 [:##e :period]
+                 [:##r :p]
+                 [:##t :y]
+                 [:##y :f]
+                 [:##u :g]
+                 [:##i :c]
+                 [:##o :r]
+                 [:##p :l]                 
+                 [:##hyphen :open_bracket];                 
+                 [:##equal_sign :close_bracket]
+        ;; Home row
+                 [:##s :o]
+                 [:##d :e]
+                 [:##f :u]
+                 [:##g :i]
+                 [:##h :d]
+                 [:##j :h]
+                 [:##k :t]
+                 [:##l :n]
+                 [:##semicolon :s]
+                 [:##quote :hyphen]
+                 [:##open_bracket :slash]
+                 [:##close_bracket :equal_sign]
+        ;; Bottom row
+                 [:##z :semicolon]
+                 [:##x :q]
+                 [:##c :j]
+                 [:##v :k]
+                 [:##b :x]
+                 [:##n :b]
+                 [:##m :m]
+                 [:##comma :w]
+                 [:##period :v]
+                [:##slash :z]
+                 ]} 
+        ]}
