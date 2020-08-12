@@ -33,7 +33,7 @@
                  [:##p :!S4] ;; $     
                  [:##open_bracket :!S6] ;; ^         
          ;; Home row
-                 [:##caps_lock :!Cc] ;; Caps -> Ctrl+C-> Cut    
+                 [:##caps_lock :!Cx] ;; Caps -> Ctrl+X-> Cut    
                  [:##a :!S2] ;; @
                  [:##s :4] 
                  [:##d :5] 
@@ -58,8 +58,8 @@
                  ]}
         {:des "Caps lock"
          :rules [
-                [:!Rcaps_lock :!Cp] ;; Shift + Caps -> Command+v -> Paste
-                [:##caps_lock :!Cv] ;; Caps -> Command+c -> Copy
+                [:!Rcaps_lock :!Cv] ;; Shift + Caps -> Command+v -> Paste
+                [:##caps_lock :!Cc] ;; Caps -> Command+c -> Copy
          ]
         }  
         {:des "dvorak"
