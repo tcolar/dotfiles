@@ -25,7 +25,7 @@ sudo apt-get install -y \
   xfce4 \
   xfce4-goodies
 
-  
+
 # install oh-my-zsh
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -33,25 +33,44 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # install customrc files
 rm ~/.customrc.sh
 ln -s $DIR/../.customrc.sh ~
-touch ~/.secrets.sh 
-echo "source ~/.customrc.sh" >> ~/.zshrc 
-echo "source ~/.secrets.sh" >> ~/.zshrc 
+touch ~/.secrets.sh
+echo "source ~/.customrc.sh" >> ~/.zshrc
+echo "source ~/.secrets.sh" >> ~/.zshrc
 
 # qmk
 python3 -m pip install --user qmk
 qmk setup
 
 # 1password
-wget https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb -o /tmp/1password-latest.deb 
+wget https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb -o /tmp/1password-latest.deb
 sudo dpkg -i /tmp/1password-latest.deb
 
 # vnc
-chmod +x $DIR/../.vnc/xstartup 
-if [ ! -f ~/.vnc/passwd ]; then 
+if [ ! -f ~/.vnc/passwd ]; then
     echo setup a vnc password
     vncpasswd
-fi 
+fi
+ln -s $DIR/vnc.sh ~/vnc.sh || true
+chmod +x ~/vnc.sh
+ln -s $DIR/../.vnc/xstartup ~/.vnc || true
+chmod +x $DIR/../.vnc/xstartup
+
+sudo tee /etc/systemd/system/vnc.service << 'EOF'
+[Unit]
+Description=Spark service
+
+[Service]
+Type=forkig
+User=tcolar
+ExecStart=/home/tcolar/vnc.sh
+
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo chmod +x /etc/systemd/system/vnc.service
+sudo systemctl restart vnc
+sudo systemctl enable vnc
 
 # end
-echo Done 
+echo Done
 echo You should run: source ~/.zshrc
