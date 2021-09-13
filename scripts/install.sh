@@ -3,7 +3,6 @@
 set -e
 
 DIR="$(cd "$(dirname "$0")" && pwd)"
-chmod +x $DIR/../.vnc/xstartup 
 
 # install software
 sudo apt-get update
@@ -45,6 +44,13 @@ qmk setup
 # 1password
 wget https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb -o /tmp/1password-latest.deb 
 sudo dpkg -i /tmp/1password-latest.deb
+
+# vnc
+chmod +x $DIR/../.vnc/xstartup 
+if [ ! -f ~/.vnc/passwd ]; then 
+    echo setup a vnc password
+    vncpasswd
+fi 
 
 # end
 echo Done 
