@@ -3,9 +3,7 @@
 set -e
 
 DIR="$(cd "$(dirname "$0")" && pwd)"
-echo $DIR
-
-exit 0
+chmod +x $DIR/../.vnc/xstartup 
 
 # install software
 sudo apt-get update
@@ -23,7 +21,11 @@ sudo apt-get install -y \
   zsh \
   wget \
   curl \
-  gnupg2
+  gnupg2 \
+  tightvncserver \
+  xfce4 \
+  xfce4-goodies
+
   
 # install oh-my-zsh
 chsh -s $(which zsh)
